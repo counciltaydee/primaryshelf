@@ -37,7 +37,7 @@
             <input id="heroSearch" type="search" placeholder="Search by title, subject or class..." autocomplete="off" />
             <kbd>/</kbd>
           </div>
-          <div class="hero-stats"><span><strong>9</strong> resources</span><span class="dot"></span><span><strong>6</strong> subjects</span><span class="dot"></span><span><strong>2026</strong> collection</span></div>
+          <div class="hero-stats"><span><strong>53</strong> resources</span><span class="dot"></span><span><strong>6</strong> subjects</span><span class="dot"></span><span><strong>P1–P3, P5</strong> collection</span></div>
         </div>
         <div class="hero-art" aria-hidden="true">
           <div class="sun"></div><div class="leaf leaf-one"></div><div class="leaf leaf-two"></div>
@@ -69,7 +69,14 @@
           <button class="subject-pill" data-subject="Religious Education">Religious Education</button>
           <button class="subject-pill" data-subject="Luganda">Luganda</button>
         </div>
-        <div class="results-meta"><span id="resultsLabel">Showing all resources</span><span id="resultCount">9 resources</span></div>
+        <div class="grade-pills" aria-label="Filter by class">
+          <button class="grade-pill active" data-grade="all">All classes</button>
+          <button class="grade-pill" data-grade="P1">P1</button>
+          <button class="grade-pill" data-grade="P2">P2</button>
+          <button class="grade-pill" data-grade="P3">P3</button>
+          <button class="grade-pill" data-grade="P5">P5</button>
+        </div>
+        <div class="results-meta"><span id="resultsLabel">Showing all resources</span><span id="resultCount">53 resources</span></div>
         <div class="resource-grid" id="resourceGrid"></div>
         <div class="empty-state hidden" id="emptyState"><div>⌕</div><h3>No resources found</h3><p>Try a different search term or clear your filters.</p><button class="outline-button" id="clearFilters">Clear filters</button></div>
       </section>
