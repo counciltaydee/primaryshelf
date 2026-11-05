@@ -1,9 +1,9 @@
 # PrimaryShelf
 
-PrimaryShelf is a dependency-free static library for browsing Primary One lesson
-plans, reading materials, and revision papers. The page is rendered by
-`index.html`, styled by `styles.css`, and gets its resource catalogue from the
-`resources` array in `app.js`.
+PrimaryShelf is a dependency-free static library for browsing Primary 1–3 and 5
+lesson plans, reading materials, and revision papers. The page is rendered by
+`index.html`, styled by `styles.css`, and builds its resource catalogue from
+the `resourcePaths` manifest in `app.js`.
 
 ## Run locally
 
@@ -22,25 +22,25 @@ site; stop the server with `Ctrl-C`.
 
 - Search by title, subject, or resource type. Press `/` to focus the search
   field.
-- Filter by lesson plan, revision paper, reading resource, or subject.
+- Filter by lesson plan, revision paper, reading resource, subject, or class.
 - Use **Read online** to open a PDF in the browser, or **Download** to save it.
 - Favorites, ratings, comments, and dark mode are stored in the browser's
   `localStorage`; they are not shared between users or devices.
 
-The current collection contains nine resources across English, Mathematics,
-Science, Social Studies, Religious Education, and Luganda. The displayed
-catalogue and the files it links to must be kept in sync.
+The current collection contains 53 resources across Primary 1, 2, 3, and 5.
+It covers English, Mathematics, Science, Social Studies, Religious Education,
+and Luganda. The displayed catalogue and the files it links to must be kept in
+sync.
 
 ## Adding or replacing a resource
 
-1. Add the PDF under the appropriate `P1/<subject>/notes` or
-   `P1/<subject>/papers and revision` directory.
-2. Add or update one object in the `resources` array at the top of `app.js`.
-   Its `path` must match the PDF path exactly, including spaces and
-   capitalization. `title`, `subject`, `type`, `typeLabel`, `description`,
-   `year`, `pages`, and `rating` drive the card and filters.
-3. If the total collection or subject count changes, update the corresponding
-   values in the hero copy in `index.html`.
+1. Add the PDF under the appropriate `P<grade>/<subject>/notes` or
+   `P<grade>/<subject>/papers and revision` directory.
+2. Add the exact PDF path to the `resourcePaths` manifest near the top of
+   `app.js`. The app derives the class, subject, type, title, and year from the
+   path and filename.
+3. If the total collection or subject/class coverage changes, update the
+   corresponding values in the hero copy and filter controls in `index.html`.
 4. Open the site locally and verify search, filters, the reader link, and the
    download link for the changed resource.
 
@@ -50,5 +50,5 @@ catalogue and the files it links to must be kept in sync.
 | --- | --- |
 | `index.html` | Page structure, catalogue controls, and reader modal |
 | `styles.css` | Responsive light/dark theme styles |
-| `app.js` | Catalogue data and client-side interactions |
-| `P1/` | Bundled PDF learning resources |
+| `app.js` | Catalogue manifest and client-side interactions |
+| `P1/`, `P2/`, `P3/`, `P5/` | Bundled PDF learning resources by class |
